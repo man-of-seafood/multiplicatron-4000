@@ -5,7 +5,7 @@ const url = require('url');
 const server = http.createServer(function(request, response) {
 
 	const urlPath = url.parse(request.url).pathname;
-	const filePath = `./client/${urlPath}`;
+	let filePath = `./client/${urlPath}`;
 
 	fs.stat(filePath, function(err, fileInfo) {
 		if(!err && fileInfo.isDirectory()) {
