@@ -16,31 +16,22 @@ class ViewManager {
 				);
 	}
 	onSubmitCalculate(event) {
-		// block form from actually submitting (refreshing page)
 		event.preventDefault();
 		
-		let htmlCollectionOfDivs = document.getElementById('factors')
-			.children;
-		let divsContainingFactors = [];
-		for(let i = 0; i < htmlCollectionOfDivs.length; i++) {
-			divsContainingFactors.push(htmlCollectionOfDivs[i]);
-		}
-		let divs = Array.from(divsContainingFactors);
+		let htmlCollectionOfDivs = document.getElementById('factors').children;
+		console.log(htmlCollectionOfDivs);
+		let divs = Array.from(htmlCollectionOfDivs);
+		console.log(divs);
 		//console.log(divs[1].children[0].value);
 		let factors = [];
 		divs.forEach(div => {
-			factors.push(div.children[0].value);
+			factors.push(parseInt(div.children[0].value, 10));
 		});
-		factors = factors.map(stringNum => parseInt(stringNum, 10));
-		console.log(factors);
-		// convert them to ints
 		
-
-		// multiply
-		//const product = multiply([num1, num2]);
+		const product = multiply(factors);
 
 		// output
-		//alert(product);
+		alert(product);
 	}
 	onSubmitAddFactor(event) {
 		event.preventDefault();
