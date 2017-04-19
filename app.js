@@ -18,33 +18,40 @@ class ViewManager {
 	onSubmitCalculate(event) {
 		// block form from actually submitting (refreshing page)
 		event.preventDefault();
-		// get the inputted numbers -- this is probably going to be a
-		// forEach or for loop in the future once i figure out how to 
-		// add additional elements and the number of input nums is 
-		// not known and therefore can't be hard coded. 
-		let num1 = document.getElementById('input-factor1').value;
-		let num2 = document.getElementById('input-factor2').value;
-
+		
+		let htmlCollectionOfDivs = document.getElementById('factors')
+			.children;
+		let divsContainingFactors = [];
+		for(let i = 0; i < htmlCollectionOfDivs.length; i++) {
+			divsContainingFactors.push(htmlCollectionOfDivs[i]);
+		}
+		let divs = Array.from(divsContainingFactors);
+		//console.log(divs[1].children[0].value);
+		let factors = [];
+		divs.forEach(div => {
+			factors.push(div.children[0].value);
+		});
+		factors = factors.map(stringNum => parseInt(stringNum, 10));
+		console.log(factors);
 		// convert them to ints
-		num1 = parseInt(num1, 10);
-		num2 = parseInt(num2, 10);
+		
 
 		// multiply
-		const product = multiply([num1, num2]);
+		//const product = multiply([num1, num2]);
 
 		// output
-		alert(product);
+		//alert(product);
 	}
 	onSubmitAddFactor(event) {
 		event.preventDefault();
 		//add a new input box 
-		let factorsForm = document.getElementById('factors');
+		let factors = document.getElementById('factors');
 		let newDiv = document.createElement('div');
 		let newFactor = document.createElement('input');
 		newFactor.type = 'text';
 		newFactor.size = 3;
 		newDiv.appendChild(newFactor);
-		factorsForm.appendChild(newDiv);
+		factors.appendChild(newDiv);
 	}
 }
 
