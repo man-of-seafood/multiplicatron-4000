@@ -15,19 +15,16 @@ class TestSuite {
 		return a === b;
 	}
 	testMultiplyPositiveNumbers() {
-		return this.assertEquals(multiply(2,2), 4);
+		return this.assertEquals(multiply([2,2]), 4);
 	}
 	testMultiplyNegativeNumbers() {
-		return this.assertEquals(multiply(-2,-2), 4);
+		return this.assertEquals(multiply([-2,-2]), 4);
 	}
 	testMultiplyMixedSignNumbers() {
-		return this.assertEquals(multiply(-2,2), -4);
+		return this.assertEquals(multiply([-2,2]), -4);
 	}
 	testMultiplyNaNAndNumber() {
-		return Number.isNaN(multiply('a', 2));
-	}
-	testMultiplyNumberAndNaN() {
-		return Number.isNaN(multiply(2, 'a'));
+		return Number.isNaN(multiply([NaN, 2]));
 	}
 }
 

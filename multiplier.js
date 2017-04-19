@@ -1,9 +1,6 @@
-const multiply = function (factor1, factor2) {
-	if(Number.isNaN(factor1) || Number.isNaN(factor2)) {
-		return NaN;
-	} else {
-		return factor1 * factor2;
-	}
+const multiply = function (arrNums) {
+	const product = arrNums.reduce((acc, curr) => acc * curr);
+	return product;
 }
 
 module.exports = multiply;
