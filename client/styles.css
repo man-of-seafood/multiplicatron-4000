@@ -1,0 +1,27 @@
+#form-numbers {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#form-numbers > div > div{
+	padding: 10px 20px;
+	text-align: center;
+}
+
+#form-numbers hr, input[type=text] {
+	width: 80px;
+	font-size: 36px;
+	text-align: center;
+}
+
+#add-factor {
+	width: 200px;
+	margin: auto auto;
+	text-align: center;
+}
+
+#product {
+	font-size: 48px;
+	font-weight: bold;
+}

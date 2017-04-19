@@ -7,13 +7,12 @@ class ViewManager {
 		document.getElementById('form-numbers')
 			.addEventListener(
 				'submit',
-				this.onSubmitCalculate
-				);
+				this.onSubmitCalculate.bind(this));
+
 		document.getElementById('add-factor')
 			.addEventListener(
 				'submit',
-				this.onSubmitAddFactor
-				);
+				this.onSubmitAddFactor);
 	}
 	
 	onSubmitCalculate(event) {
@@ -27,7 +26,11 @@ class ViewManager {
 		});
 		
 		const product = multiply(factors);
-		alert(product);
+		this.renderProduct(product);
+	}
+
+	renderProduct(product) {
+		document.getElementById('product').textContent = product;
 	}
 
 	onSubmitAddFactor(event) {
@@ -38,6 +41,7 @@ class ViewManager {
 		let newFactor = document.createElement('input');
 		newFactor.type = 'text';
 		newFactor.size = 3;
+		newFactor.autocomplete = 'off';
 		newDiv.appendChild(newFactor);
 		factors.appendChild(newDiv);
 	}
