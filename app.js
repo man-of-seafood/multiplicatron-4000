@@ -7,10 +7,15 @@ class ViewManager {
 		document.getElementById('form-numbers')
 			.addEventListener(
 				'submit',
-				this.onSubmit
+				this.onSubmitCalculate
+				);
+		document.getElementById('add-factor')
+			.addEventListener(
+				'submit',
+				this.onSubmitAddFactor
 				);
 	}
-	onSubmit(event) {
+	onSubmitCalculate(event) {
 		// block form from actually submitting (refreshing page)
 		event.preventDefault();
 		// get the inputted numbers -- this is probably going to be a
@@ -29,6 +34,17 @@ class ViewManager {
 
 		// output
 		alert(product);
+	}
+	onSubmitAddFactor(event) {
+		event.preventDefault();
+		//add a new input box 
+		let factorsForm = document.getElementById('factors');
+		let newDiv = document.createElement('div');
+		let newFactor = document.createElement('input');
+		newFactor.type = 'text';
+		newFactor.size = 3;
+		newDiv.appendChild(newFactor);
+		factorsForm.appendChild(newDiv);
 	}
 }
 
