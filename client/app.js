@@ -15,24 +15,21 @@ class ViewManager {
 				this.onSubmitAddFactor
 				);
 	}
+	
 	onSubmitCalculate(event) {
 		event.preventDefault();
 		
 		let htmlCollectionOfDivs = document.getElementById('factors').children;
-		console.log(htmlCollectionOfDivs);
 		let divs = Array.from(htmlCollectionOfDivs);
-		console.log(divs);
-		//console.log(divs[1].children[0].value);
 		let factors = [];
 		divs.forEach(div => {
 			factors.push(parseInt(div.children[0].value, 10));
 		});
 		
 		const product = multiply(factors);
-
-		// output
 		alert(product);
 	}
+
 	onSubmitAddFactor(event) {
 		event.preventDefault();
 		//add a new input box 
