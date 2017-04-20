@@ -9,6 +9,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "browserify": "^14.3.0"
+    "browserify": "^14.1.0"
   }
 }
