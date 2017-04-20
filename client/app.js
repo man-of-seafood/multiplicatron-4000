@@ -3,13 +3,12 @@ const multiply = require('./multiplier.js');
 class ViewManager {
 
 	connectEventHandlers() {
-		// wire up event handler for form submit
 		document.getElementById('form-numbers')
 			.addEventListener(
 				'submit',
 				this.onSubmitCalculate.bind(this));
 
-		document.getElementById('add-factor')
+		document.getElementById('new-factor')
 			.addEventListener(
 				'submit',
 				this.onSubmitAddFactor);
@@ -35,7 +34,7 @@ class ViewManager {
 
 	onSubmitAddFactor(event) {
 		event.preventDefault();
-		//add a new input box 
+		// add a new input box 
 		let factors = document.getElementById('factors');
 		let newDiv = document.createElement('div');
 		let newFactor = document.createElement('input');
