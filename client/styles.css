@@ -21,7 +21,12 @@
 	text-align: center;
 }
 
-#product {
+button {
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+.product {
 	font-size: 48px;
 	font-weight: bold;
 }

@@ -30,7 +30,7 @@ class ViewManager {
 	}
 
 	renderProduct(product) {
-		document.getElementById('product').textContent = product;
+		document.querySelector('.product').textContent = product;
 	}
 
 	onSubmitAddFactor(event) {
