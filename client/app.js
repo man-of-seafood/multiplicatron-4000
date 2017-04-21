@@ -38,6 +38,7 @@ class ViewManager {
 		let factors = document.getElementById('factors');
 		let newDiv = document.createElement('div');
 		let newFactor = document.createElement('input');
+		newFactor.className = 'input-factor';
 		newFactor.type = 'text';
 		newFactor.size = 3;
 		newFactor.autocomplete = 'off';

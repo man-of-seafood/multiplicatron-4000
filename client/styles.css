@@ -6,7 +6,6 @@
 
 #form-numbers > div > div{
 	padding: 10px 20px;
-	text-align: center;
 }
 
 #form-numbers hr, input[type=text] {
@@ -21,12 +20,13 @@
 	text-align: center;
 }
 
+.product {
+	font-size: 48px;
+	font-weight: bold;
+}
+
 button {
 	margin-top: 40px;
 	font-size: 20px;
 }
 
-.product {
-	font-size: 48px;
-	font-weight: bold;
-}
