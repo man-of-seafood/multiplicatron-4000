@@ -21,6 +21,21 @@ class ViewManager {
 		document.querySelectorAll('.input-factor').forEach(
 			inputEl => factors.push(parseInt(inputEl.value, 10)));
 
+		// need to check if the # of actual numbers is at least 2. and if so, 
+		// remove all the NaN entries
+		let realNumsCount = 0;
+		let nonNumsCount = 0;
+		factors.forEach(function(factor) {
+			isNaN(factor) ? nonNumsCount++ : realNumsCount++;
+		});
+		if(realNumsCount >=2 ) {
+			for(let i = factors.length-1; i >=0; i--){
+				if(isNaN(factors[i])) {
+					factors.splice(i, 1);
+				}
+			}
+		}
+
 		const product = multiply(factors);
 		this.renderProduct(product);
 	}
