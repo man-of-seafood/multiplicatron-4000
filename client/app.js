@@ -16,14 +16,11 @@ class ViewManager {
 	
 	onSubmitCalculate(event) {
 		event.preventDefault();
-		
-		let htmlCollectionOfDivs = document.getElementById('factors').children;
-		let divs = Array.from(htmlCollectionOfDivs);
+
 		let factors = [];
-		divs.forEach(div => {
-			factors.push(parseInt(div.children[0].value, 10));
-		});
-		
+		document.querySelectorAll('.input-factor').forEach(
+			inputEl => factors.push(parseInt(inputEl.value, 10)));
+
 		const product = multiply(factors);
 		this.renderProduct(product);
 	}
@@ -34,7 +31,7 @@ class ViewManager {
 
 	onSubmitAddFactor(event) {
 		event.preventDefault();
-		// add a new input box 
+		// add a new input text box 
 		let factors = document.getElementById('factors');
 		let newDiv = document.createElement('div');
 		let newFactor = document.createElement('input');
